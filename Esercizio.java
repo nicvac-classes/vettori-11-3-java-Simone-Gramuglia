@@ -53,14 +53,10 @@ class Vettori113 {
     }
     
     public static int elimina(int[] v, int n, int posizione) {
-        int[] w = new int[n - 1];
         int n2, i;
 
-        for (i = 0; i <= posizione - 1; i++) {
-            w[i] = v[i];
-        }
         for (i = posizione; i <= n - 2; i++) {
-            w[i] = v[i + 1];
+            v[i] = v[i + 1];
         }
         n2 = n - 1;
         
@@ -89,16 +85,12 @@ class Vettori113 {
             System.out.println("La posizione inserita non è valida, Riprova con un valore che va da 0 a " + (n - 1));
             posizione = input.nextInt();
         }
-        int[] w = new int[n + 1];
         int n2, i;
 
-        for (i = 0; i <= posizione - 1; i++) {
-            w[i] = v[i];
-        }
-        w[posizione] = valore;
         for (i = posizione + 1; i <= n; i++) {
-            w[i] = v[i - 1];
+            v[i] = v[i - 1];
         }
+        v[posizione] = valore;
         n2 = n + 1;
         
         return n2;
